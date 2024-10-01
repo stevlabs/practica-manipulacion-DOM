@@ -13,6 +13,7 @@ predeterminados de los navegadores
     display: grid;
     grid-template-rows: 1fr 3fr auto; /* Header Main Footer*/
     height: 100vh; /* Altura es 100% de la altura del viewport */
+    font: bold 16px sans-serif; /* Establecer texto en negrita, 16px y fuente*/
 }
 
 /*  ====================================== 
@@ -37,6 +38,7 @@ predeterminados de los navegadores
 /* Asignar segunda fila */
 .main-container {
     grid-row: 2;
+    background-color: white;
 }
 
 /* Seccion del main*/
@@ -52,7 +54,8 @@ predeterminados de los navegadores
 
 /* Titulo de la galeria */
 .section-container h1 {
-    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -61,6 +64,8 @@ predeterminados de los navegadores
     display: flex;
     flex-wrap: wrap; /* Permitir que las imagenes se reorganicen en una nueva fila */
     justify-content: center;
+    gap: 20px;
+    padding: 15px;
 }
 
 /* Tarjetas de las imágenes */
@@ -69,13 +74,16 @@ predeterminados de los navegadores
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    border: 2px solid #ccc; 
+    background:#fff;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 1px 5px ; 
     gap: 10px;
 }
 
-/* Las imagenes de la galeia */
+/* Las imagenes de la galeria */
 .galeria-container img {
-    margin: 10px; /* Espacio entre imágenes */
+    margin: 10px; /* Espacio entre imagenes */
 }
 
 /*  ====================================== 
@@ -85,76 +93,67 @@ predeterminados de los navegadores
 /* Asignar tercera fila */
 .footer-container {
     grid-row: 3;
-    background-color: grey; 
+    background: #0d1117; 
 }
 /* Contenido del footer */
 .footer-container p {
-    margin: 10px;
-    background-color: grey; 
+    margin: 20px;
+    color:#fff
 }
-
-/*
-ANCHO	    ALTURA COMUN
-480px	    800px
-768px	    1024px
-992px	    600px - 800px
-1200px	    900px - 1080px
-*/
-
 
 /*  ====================================== 
                     480px
     ====================================== */
-@media screen and (min-width : 480px) {
+    @media screen and (min-width : 480px) {
 
-    .banner-container img {
-        max-height: 200px;
+        .banner-container img {
+            max-height: 200px;
+        }
+    
+        .galeria-container img {
+            max-width: 200px;
+            max-height: 200px;
+        }
     }
-
-    .galeria-container img {
-        max-width: 200px;
-        max-height: 200px;
-    }
-}
-
+    
 /*  ====================================== 
                     768px
     ====================================== */
-@media screen and (min-width : 768px) {
-    .banner-container img {
-        max-height: 300px; 
+    @media screen and (min-width : 768px) {
+        .banner-container img {
+            max-height: 325px; 
+        }
+    
+        .galeria-container img {
+            max-width: 350px; 
+            max-height: 250px; 
+        }
     }
-
-    .galeria-container img {
-        max-width: 350px; 
-        max-height: 250px; 
-    }
-}
-
+    
 /*  ====================================== 
                     992px
     ====================================== */
-@media screen and (min-width : 992px) {
-    .banner-container img {
-        max-height: 400px; 
+    @media screen and (min-width : 992px) {
+        .banner-container img {
+            max-height: 400px; 
+        }
+    
+        .galeria-container img {
+            max-width: 450px; 
+            max-height: 300px; 
+        }
     }
-
-    .galeria-container img {
-        max-width: 450px; 
-        max-height: 300px; 
-    }
-}
-
+    
 /*  ====================================== 
                     1200px
     ====================================== */
-@media screen and (min-width : 1200px) {
-    .banner-container img {
-        max-height: 500px;
+    @media screen and (min-width : 1200px) {
+        .banner-container img {
+            max-height: 500px;
+        }
+    
+        .galeria-container img {
+            max-width: 550px; 
+            max-height: 350px; 
+        }
     }
-
-    .galeria-container img {
-        max-width: 550px; 
-        max-height: 350px; 
-    }
-}

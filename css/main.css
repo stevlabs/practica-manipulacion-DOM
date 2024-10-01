@@ -1,0 +1,160 @@
+/*
+Selector universal para "resetear" estilos
+predeterminados de los navegadores
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* el ancho y alto de un elemento incluyan borde o relleno.*/
+}
+
+/* Contenedor principal para organizar lso elementos en 3 filas*/
+.container {
+    display: grid;
+    grid-template-rows: 1fr 3fr auto; /* Header Main Footer*/
+    height: 100vh; /* Altura es 100% de la altura del viewport */
+}
+
+/*  ====================================== 
+                    HEADER
+    ====================================== */
+
+/* Asignar primera fila */
+.header-container {
+    grid-row: 1;
+}
+
+/* Imagen banner: El contenedor y la imagen ocupan todo el ancho disponible */
+.banner-container, .banner-container img {
+    width: 100%;
+    height: 100%;
+}
+
+/*  ====================================== 
+                    MAIN
+    ====================================== */
+
+/* Asignar segunda fila */
+.main-container {
+    grid-row: 2;
+}
+
+/* Seccion del main*/
+.main-container section{
+    height: 100%;
+}
+
+/* Contenedor de la galeria */
+.section-container {
+    display: grid;
+    grid-template-rows: auto 1fr; /* Titulo ocupa su espacio y galería el resto */
+}
+
+/* Titulo de la galeria */
+.section-container h1 {
+    margin: 10px;
+    text-align: center;
+}
+
+/* Contenedor donde estan todas las imagenes de la galeria */
+.galeria-container {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las imagenes se reorganicen en una nueva fila */
+    justify-content: center;
+}
+
+/* Tarjetas de las imágenes */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    border: 2px solid #ccc; 
+    gap: 10px;
+}
+
+/* Las imagenes de la galeia */
+.galeria-container img {
+    margin: 10px; /* Espacio entre imágenes */
+}
+
+/*  ====================================== 
+                    FOOTER
+    ====================================== */
+
+/* Asignar tercera fila */
+.footer-container {
+    grid-row: 3;
+    background-color: grey; 
+}
+/* Contenido del footer */
+.footer-container p {
+    margin: 10px;
+    background-color: grey; 
+}
+
+/*
+ANCHO	    ALTURA COMUN
+480px	    800px
+768px	    1024px
+992px	    600px - 800px
+1200px	    900px - 1080px
+*/
+
+
+/*  ====================================== 
+                    480px
+    ====================================== */
+@media screen and (min-width : 480px) {
+
+    .banner-container img {
+        max-height: 200px;
+    }
+
+    .galeria-container img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+}
+
+/*  ====================================== 
+                    768px
+    ====================================== */
+@media screen and (min-width : 768px) {
+    .banner-container img {
+        max-height: 300px; 
+    }
+
+    .galeria-container img {
+        max-width: 350px; 
+        max-height: 250px; 
+    }
+}
+
+/*  ====================================== 
+                    992px
+    ====================================== */
+@media screen and (min-width : 992px) {
+    .banner-container img {
+        max-height: 400px; 
+    }
+
+    .galeria-container img {
+        max-width: 450px; 
+        max-height: 300px; 
+    }
+}
+
+/*  ====================================== 
+                    1200px
+    ====================================== */
+@media screen and (min-width : 1200px) {
+    .banner-container img {
+        max-height: 500px;
+    }
+
+    .galeria-container img {
+        max-width: 550px; 
+        max-height: 350px; 
+    }
+}
